@@ -1,6 +1,7 @@
 ﻿@page
 @model FizzBuzz.Pages.AdressModel
-@{
+@if(Model.fizzbuzz1 != null)
+{
     <p>
         @Html.DisplayNameFor(model => Model.fizzbuzz1.number):
         @Model.fizzbuzz1.number

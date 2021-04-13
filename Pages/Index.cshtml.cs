@@ -29,14 +29,7 @@ namespace FizzBuzz.Pages
         {
            if (ModelState.IsValid)
            {
-                fizzbuzz.result = string.Empty;
-                fizzbuzz.date = DateTime.Now;
-                if (fizzbuzz.number % 3 == 0)
-                    fizzbuzz.result += "Fizz";
-                if (fizzbuzz.number % 5 == 0)
-                    fizzbuzz.result += "Buzz";
-                if (fizzbuzz.result.Length == 0)
-                    fizzbuzz.result = "Liczba: " + fizzbuzz.number + " nie spelnia kryteriow Fizz/Buzz";
+                fizzbuzz.FizzBuzzCheck();
 
                 HttpContext.Session.SetString("FizzBuzz", JsonConvert.SerializeObject(fizzbuzz));
                 System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(fizzbuzz));

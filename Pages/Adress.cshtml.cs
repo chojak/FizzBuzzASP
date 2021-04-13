@@ -18,8 +18,6 @@ namespace FizzBuzz.Pages
         {
             string FizzBuxx = HttpContext.Session.GetString("FizzBuzz");
 
-            
-
             if (FizzBuxx != null)
                 fizzbuzz1 = JsonConvert.DeserializeObject<FizzBuzx>(FizzBuxx);
         }
