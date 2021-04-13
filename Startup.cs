@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using FizzBuzz.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace FizzBuzz
 {
@@ -25,6 +27,10 @@ namespace FizzBuzz
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<FizzBuzzContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("FizzBuzzBD")); 
+            });
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
